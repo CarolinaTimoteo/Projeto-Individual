@@ -42,3 +42,27 @@ function myMap() {
     };
     var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 }
+
+/**COMECEI A ESCREVER AQUI */
+
+function botao_cadstrar(){
+
+    const nome_empresa_input = nome_empresa.value
+    const CNPJ = CNPJ_input.value
+    const logadouro = logadouro_input.value
+    const bairro = bairro_input.value
+    const cidade = cidade_input.value
+    const estado = estado_input.value
+    const pais = pais_input.value
+    const ramo = ramo_input.value
+    const descricao = descricao_input.value
+    const senha = senha_input.value
+    const confirmacao_senha = confirmacao_senha_input.value
+    const DDD = DDD_input.value
+    const telefone = telefone_input.value
+    const email = emial_input.value
+    const Instagram = Instagram_input.value
+
+
+
+}

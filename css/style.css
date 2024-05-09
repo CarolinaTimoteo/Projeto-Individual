@@ -7,8 +7,11 @@ body {
   overflow-x: hidden;
 }
 
+
 .layout_padding {
   padding: 90px 0;
+  display: flex;
+  justify-content: center;
 }
 
 .layout_padding2 {
@@ -37,18 +40,23 @@ body {
   padding-left: 15px;
   padding-right: 15px;
 }
+.heading_container_cadastro{
+  color:#ffffff
+}
 
-.container{
+.container_cadastro{
   display: flex;
   justify-content: center;
   flex-direction:column;
   background-color:#96AB84;
+  width: 50%;
   align-items: center;
-  font-family:Lucida;
+
+  
+  
 }
 
-.nome_empresa{
-  
+.nome_empresa_input{
   background-color: #ffffff;
   height: 60px;
   width: 50%;
@@ -110,7 +118,7 @@ body {
 .telefone_input{
 
 }
-.e-mail{
+.email_input{
   background-color: #ffffff;
   height: 60px;
   width: 50%
@@ -125,6 +133,15 @@ body {
   
   color: #000000;
   font-size: 24px;
+}
+
+
+.botao_entrar{
+  background-color: #BC9ED0;
+  height: 50px;
+  width: 20%;
+  border: #BC9ED0;
+  color: #f9fafa;
 }
 
 .botao_cadastrar{
@@ -150,6 +167,7 @@ body {
 }
 
 .heading_container h2 {
+  color: #96AB84;
   position: relative;
   font-weight: bold;
   text-transform: uppercase;
