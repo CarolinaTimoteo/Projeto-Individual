@@ -60,9 +60,12 @@ function botao_cadstrar(){
     const confirmacao_senha = confirmacao_senha_input.value
     const DDD = DDD_input.value
     const telefone = telefone_input.value
-    const email = emial_input.value
+    const email = email_input.value
     const Instagram = Instagram_input.value
 
+    if (email == ""){
+        alert("Campo e-mail não pode estar vazio")
+    }
 
 
 }

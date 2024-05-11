@@ -2,8 +2,8 @@
 @import url("../fonts/octin_sports_rg.ttf");
 body {
   font-family: "Poppins", sans-serif;
-  color: #0c0c0c;
-  background-color: #D6CBA7;
+  color: #151515;
+  background-color: #fff5eb;
   overflow-x: hidden;
 }
 
@@ -12,7 +12,7 @@ body {
   padding: 90px 0;
   display: flex;
   justify-content: center;
-}
+} 
 
 .layout_padding2 {
   padding: 45px 0;
@@ -131,13 +131,16 @@ body {
 
 .titulo_input{
   
-  color: #000000;
+  color: #ffffff;
   font-size: 24px;
 }
 
 
 .botao_entrar{
-  background-color: #BC9ED0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background-color: #D4C7B4;
   height: 50px;
   width: 20%;
   border: #BC9ED0;
@@ -145,15 +148,18 @@ body {
 }
 
 .botao_cadastrar{
+  display:inline;
+  justify-content:center;
+  align-items:center;
   background-color: #BC9ED0;
-  height: 50px;
-  width: 20%;
+  height: 20%;
+  width: auto;
   border: #BC9ED0;
   color: #f9fafa;
 }
 
 .heading_container {
-  color:#ffffff;
+  color:#1e1e19;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -167,7 +173,7 @@ body {
 }
 
 .heading_container h2 {
-  color: #96AB84;
+  color: #7b6c58;
   position: relative;
   font-weight: bold;
   text-transform: uppercase;
@@ -191,7 +197,7 @@ body {
 }
 
 .header_section {
-  background-color: #BC9ED0;
+  background-color: #a45a6b;
 }
 
 .logoNavBar{
@@ -217,7 +223,7 @@ body {
 .custom_nav-container .navbar-nav .nav-item .nav-link {
   padding: 3px 15px;
   margin: 10px 15px;
-  color: #000000;
+  color: #ffffff;
   text-align: center;
   text-transform: uppercase;
 }
@@ -250,7 +256,7 @@ a:focus {
 .navbar-brand span {
   font-size: 24px;
   font-weight: 700;
-  color: #272727;
+  color: #ffffff;
   text-transform: uppercase;
 }
 
@@ -275,7 +281,7 @@ a:focus {
   display: block;
   width: 32px;
   height: 4px;
-  background-color: #000000;
+  background-color: #ffffff;
   border-radius: 15px;
   margin: 7px 0;
   -webkit-transition: all 0.3s;
@@ -349,7 +355,7 @@ a:focus {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
-  background-color: #f9fafa;
+  background-color: #ffffff;
 }
 
 .slider_section .row {
@@ -394,33 +400,33 @@ a:focus {
   display:flex;
   justify-content: center;
   padding: 10px 15px;
-  background-color: #BC9ED0;
+  background-color: #a45a6b;
   color: #ffffff;
   border-radius: 0;
-  border: 1px solid #BC9ED0;
+  border: 1px solid #ffffff;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
 
 .slider_section .detail-box .btn-box .btn1:hover {
   background-color: transparent;
-  color: #9b10a8;
+  color: #2D2D23;
 }
 
 .slider_section .detail-box .btn-box .btn2 {
   justify-content: center;
   padding: 10px 15px;
-  background-color: #BC9ED0;
+  background-color: #a45a6b;
   color: #ffffff;
   border-radius: 0;
-  border: 1px solid #BC9ED0;
+  border: 1px solid #ffffff;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
 
 .slider_section .detail-box .btn-box .btn2:hover {
   background-color: transparent;
-  color: #6bb7be;
+  color: #2D2D23;
 }
 
 .slider_section .img-box img {
@@ -440,7 +446,7 @@ a:focus {
 }
 
 .slider_section .carousel-indicators li {
-  background-color: #BC9ED0;
+  background-color: #2D2D23;
   width: 12px;
   height: 12px;
   border-radius: 100%;
@@ -450,14 +456,16 @@ a:focus {
 .slider_section .carousel-indicators li.active {
   width: 17px;
   height: 17px;
-  background-color: #96AB84    ;
+  background-color: #a45a6b    ;
 }
 
 .furniture_section .box {
   margin-top: 45px;
-  background-color: #f7fafa;
+  background-color: #D4C7B4;
   padding: 25px;
   border-radius: 5px;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 1);
 }
 
 .furniture_section .box .img-box {
@@ -502,17 +510,17 @@ a:focus {
 }
 
 .furniture_section .box .detail-box .price_box .price_heading span {
-  color: #96AB84;
+  color: #459500;
 }
 
 .furniture_section .box .detail-box .price_box a {
-  color: #6bb7be;
+  color: #854627;
   text-transform: uppercase;
   font-size: 15px;
 }
 
 .about_section {
-  background-color: #f9fafa;
+  background-color: #D4C7B4;
 }
 
 .about_section .row {
@@ -533,17 +541,17 @@ a:focus {
 .about_section .detail-box a {
   display: inline-block;
   padding: 10px 45px;
-  background-color: #96AB84;
+  background-color: #7B7458;
   color: #ffffff;
   border-radius: 0;
-  border: 1px solid #96AB84;
+  border: 1px solid #7B7458;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
 
 .about_section .detail-box a:hover {
   background-color: transparent;
-  color: #6bb7be;
+  color: #2D2D23;
 }
 
 .blog_section .heading_container {
@@ -560,9 +568,10 @@ a:focus {
 
 .blog_section .box {
   margin-top: 55px;
-  background-color: #ffffff;
-  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
-          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+  height: 80%;
+  background-color: #7B7458;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 1);
 }
 
 .blog_section .box .img-box {
@@ -617,8 +626,8 @@ a:focus {
           align-items: center;
   margin: 45px;
   padding: 35px 25px;
-  -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
-          box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 15px 0 rgba(0, 0, 0, 1);
 }
 
 .client_section .box .img-box {
@@ -718,8 +727,8 @@ a:focus {
   padding-left: 15px;
   outline: none;
   color: #101010;
-  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
-          box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 5px 0 rgba(0, 0, 0, 1);
 }
 
 .contact_section .form_container input::-webkit-input-placeholder {
