@@ -2,7 +2,38 @@
     background-color: #D4C7B4;
 }
 
-.navbar {
+nav{
+    top: 0%;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 18px;
+    color: black;
+    display: flex;
+    /* justify-content: center; */
+    gap: 25%;
+    align-items: center;
+    position: fixed;
+    background-color: #a45a6b;
+}
+
+.logotipo{
+    margin-left: 10px;
+}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-size: 22px;
+    padding-inline: 30px;
+    list-style: none;
+    position: relative;
+    justify-content: space-evenly;
+    gap: 80px;
+}
+
+/* .navbar {
     margin:0; 
 	padding:0;
     background-color: #a45a6b;
@@ -19,12 +50,12 @@
 	color:#ffffff;
 	text-align:center;
 	padding:0  0.2em 0.2em  0;
-	text-decoration:none;
-}
+	text-decoration:none; */
 
-.logoNavBar {
-    width: 100px;
-    height: 100px;
+
+.mini_logo_nav {
+    width: 70px;
+    height: 70px;
 }
 
 
@@ -204,12 +235,13 @@
     width: 100%;
 }
 .card-esquerda{
+    font-size: 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items:center;
     border-radius: 20px;
-    margin-top: 15px;
+    margin-top: 150px;
     height: 300px;
     width: 400px;
     background-color: #a45a6b;
@@ -217,22 +249,21 @@
    
 }
 .card-direita{
+    font-size: 30px;
     display: flex;
     justify-content: center;
     align-items:center;
     border-radius: 20px;
-    margin-top: 15px;
+    margin-top: 150px;
     height: 300px;
     width: 400px;
     background-color: #D4C7B4;
     color: #195e30;
     
 }
-.texto_quiz{
-    align-items: center;
-    font-size:24px;
-}
+
 .botao_quiz{
+
 
 }
 .container_quiz{
@@ -241,7 +272,39 @@
     align-items: center;
     flex-direction: column;
     margin-top: 25px;
-    background-color: #D4C7B4;
+    background-color: #e6e2dd;
     height: 100%;
     width: 60%;
+}
+
+.titulo_questionario{
+    font-size: 30px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: #195e30;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.pergunta{
+    margin-top: 20px;
+    margin-bottom: 25px;
+    font-size: 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: #201b18;
+}
+.opcoes{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    border-radius: 20px;
+    border-style:ridge;
+    width: 200px;
+    height: 40px;
+    color: #201b18;
+    background-color: #ffffff;
+}
+.botao_quiz{
+    margin-top: 15px;
+    border-radius: 20px;
+    width: 200px;
+    height: 40px;
+    background-color: #ffffff;
 }

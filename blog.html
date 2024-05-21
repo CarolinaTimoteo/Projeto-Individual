@@ -1,80 +1,80 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
+  
   <link rel="icon" href="images/mini-logo-lilas.svg" type="image/gif" />
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-
-  <title>Re SIGNIFIC</title>
-
-  <!-- Custom styles for this template -->
+    <title>Re SIGNIFIC</title>
   <link href="..//Projeto-Individual/css/nova_estilizacao.css" rel="stylesheet" />
-
 
 </head>
 
 <body class="sub_page">
-
   <div class="hero_area">
-    <!-- header section strats -->
-    <header class="header_section long_section px-0">
-      <nav class="navbar navbar-expand-lg custom_nav-container ">
-        <a class="navbar-brand" href="index.html">
-          <span>
-            <img src="images/mini-logo-branco 12.svg" class="logoNavBar">
-          </span>
-        </a>
-        <div class="navbar_links">
-          <u class="nav_links">
-            <li> <a class="nav-link1" href="index.html">Quantidade de lixo têxtil hoje</a></li>
-
-            <li> <a class="nav-link2" href="about.html">O que é moda sustentável</a></li>
-
-            <li><a class="nav-link4" href="blog.html">Quiz</a></li>
-
-            <li><a class="nav-link5" href="contact.html">Contact Us</a></li>
-          </u>
-        </div>
-        <div class="quote_btn-container">
-          <a href="login.html">
-            <span>
-              Login
-            </span>
-        </div>
-      </nav>
-    </header>
+    <nav>
+      <img class="mini_logo_nav" src="..//Projeto-Individual/images/mini-logo-branco 12.svg">
+      <ul>
+        <li>
+          <a href="pag_inicial.html">Home</a>
+        </li>
+        <li>
+          <a href="moda_sustentavel.html">O que é</a>
+        </li>
+        <li>
+          <a href="blog.html">Quiz</a>
+        </li>
+        <li>
+          <a href="contact.html">Contato</a>
+        </li>
+      </ul>
+    </nav>
   </div>
   <div class="container-fundo">
     <div class="card-esquerda">
-      <a class="texto_quiz">Entenda mais como as suas atitudes podem ajudar a salvar o planeta</a>
+      <a class="texto_quiz_esquerda">Entenda mais como as suas atitudes podem ajudar a salvar o planeta</a>
       <button onclick="quiz()" class="botao_quiz">Ir para o quiz</button>
       <div id="questionario"></div>
     </div>
     <div class="card-direita">
-      <a class="texto_quiz">Explicando o quis</a>
+      <a class="texto_quiz_direita">Explicando o quis</a>
     </div>
   </div>
   
   <div class="container">
     <div class="container_quiz">
     <a class="titulo_questionario">Questionário</a>
+    
     <span class="pergunta">Você já tinha ouvido falar sobre moda sustentável?</span>
-    <select id="sabia_sobre_moda_sustentavel">
+    <select id="sabia_sobre_moda_sustentavel" class="opcoes">
       <option id="sim">Sim</option>
       <option id="nao">Não</option>
     </select>
-    <span class="descarte">Você já tinha pensado sobre o destino final das roupas após o descarte delas?</span>
-    <select id="sobre_o_descarte">
+
+    <span class="pergunta">Você já tinha pensado sobre o destino final das roupas após o descarte delas?</span>
+    <select id="sobre_o_descarte" class="opcoes"> 
       <option id="sim">Sim</option>
       <option id="nao">Não</option>
+    </select>
+
+      <span class="pergunta">Você tem o costume de fazer o que quando não quer mais uma peça de roupa em bom estado?</span>
+      <select id="sobre_peca_em_bom_estado" class="opcoes">
+        <option id="doar">Doar</option>
+        <option id="lixo">Jogar no lixo</option>
+        <option id="vender">Vender</option>
+      </select>
+
+      <span class="pergunta">Você tem costume de comprar roupas de quanto em quanto tempo</span>
+      <select id="sobre_peca_em_bom_estado" class="opcoes">
+        <option id="1">1</option>
+        <option id="2">2</option>
+        <option id="3">3</option>
+        <option id="4">4</option>
+        <option id="5">5</option>
+        <option id="mais">mais</option>
+        <option id="ano">ano</option>
+        <option id="mes">mês</option>
+      </select>
+
+
   </div>
 
 
