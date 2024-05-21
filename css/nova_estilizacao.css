@@ -1,0 +1,247 @@
+.body {
+    background-color: #D4C7B4;
+}
+
+.navbar {
+    margin:0; 
+	padding:0;
+    background-color: #a45a6b;
+}
+.navbar li{
+    width: 100%;
+    margin-right: 20px;
+    list-style:none;	
+	display:inline;
+}
+.navbar li a{
+    float:left;
+	width:6.0em;
+	color:#ffffff;
+	text-align:center;
+	padding:0  0.2em 0.2em  0;
+	text-decoration:none;
+}
+
+.logoNavBar {
+    width: 100px;
+    height: 100px;
+}
+
+
+.nav-link1 {
+    font-size:24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: rgb(255, 255, 255);
+}
+.nav-link2 {
+    font-size:24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: rgb(255, 255, 255);
+}
+.nav-link3 {
+    font-size:24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: rgb(255, 255, 255);
+}
+.nav-link3 {
+    font-size:24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: rgb(255, 255, 255);
+}
+
+
+
+
+.bloco_principal {
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 20px;
+}
+
+.img-box-mulher-desenhando {
+    margin-top: 40px;
+}
+
+.bloco1 h1 {
+    font-size: 60px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10%;
+}
+
+.bloco1 p {
+    font-size: 30px;
+    width: 75%;
+    margin-left: 10%;
+    margin-top: 15px;
+}
+
+.btn1 {
+    background-color: #D4C7B4;
+    width: 500px;
+    height: 100px;
+    margin-left: 10%;
+}
+
+.btn2 {
+    background-color: #D4C7B4;
+    width: 100%;
+    height: 100%;
+}
+
+.btn-box .btn1 {
+    width: 100%;
+
+}
+
+
+
+.topo_container {
+    display: inline;
+    align-items: start;
+    ;
+}
+
+.topo_container h2 {
+    color: cadetblue;
+    font-size: 75px;
+}
+
+.topo_container p {
+    font-size: 30px;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    width: 20%;
+    height: 400px;
+}
+
+.imagem_empresa {
+    justify-content: center;
+    width: 250px;
+    height: 250px;
+}
+
+.container_1 {
+    width: 90%;
+    height: 200%;
+    margin-left: 10%;
+
+}
+
+.detail-box {
+    font-size: 20px;
+}
+
+.detail-box h5 {
+    font-size: 20px;
+}
+
+.box_card {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.container {
+    width: 100%;
+    height: 200%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.img {
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: clamp(20rem, calc(20rem + 2vw), 22rem);
+    overflow: hidden;
+    box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 1em;
+    background: #ECE9E6;
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+}
+
+.card__body {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.veja_mais_sobre_semear {
+    height: 50px;
+    width: 100px;
+    background-color: #a45a6b;
+}
+
+
+.container-fundo{
+    display: flex;
+    justify-content: center;
+    margin-top: none;
+    height: 100%;
+    width: 100%;
+}
+.card-esquerda{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    border-radius: 20px;
+    margin-top: 15px;
+    height: 300px;
+    width: 400px;
+    background-color: #a45a6b;
+    color: #D4C7B4;
+   
+}
+.card-direita{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    border-radius: 20px;
+    margin-top: 15px;
+    height: 300px;
+    width: 400px;
+    background-color: #D4C7B4;
+    color: #195e30;
+    
+}
+.texto_quiz{
+    align-items: center;
+    font-size:24px;
+}
+.botao_quiz{
+
+}
+.container_quiz{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 25px;
+    background-color: #D4C7B4;
+    height: 100%;
+    width: 60%;
+}
