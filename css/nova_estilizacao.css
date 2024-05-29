@@ -1,8 +1,9 @@
 .body {
-    background-color: #D4C7B4;
+    background-color: #f4f1ed;
+    
 }
 
-nav{
+nav {
     top: 0%;
     width: 100%;
     padding: 20px;
@@ -17,11 +18,11 @@ nav{
     background-color: #a45a6b;
 }
 
-.logotipo{
+.logotipo {
     margin-left: 10px;
 }
 
-nav ul{
+nav ul {
     margin: 0;
     padding: 0;
     display: flex;
@@ -33,110 +34,137 @@ nav ul{
     gap: 80px;
 }
 
-/* .navbar {
-    margin:0; 
-	padding:0;
-    background-color: #a45a6b;
-}
-.navbar li{
-    width: 100%;
-    margin-right: 20px;
-    list-style:none;	
-	display:inline;
-}
-.navbar li a{
-    float:left;
-	width:6.0em;
-	color:#ffffff;
-	text-align:center;
-	padding:0  0.2em 0.2em  0;
-	text-decoration:none; */
-
-
 .mini_logo_nav {
     width: 70px;
     height: 70px;
 }
 
-
 .nav-link1 {
-    font-size:24px;
+    font-size: 24px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     color: rgb(255, 255, 255);
 }
+
 .nav-link2 {
-    font-size:24px;
+    font-size: 24px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     color: rgb(255, 255, 255);
 }
+
 .nav-link3 {
-    font-size:24px;
+    font-size: 24px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     color: rgb(255, 255, 255);
 }
+
 .nav-link3 {
-    font-size:24px;
+    font-size: 24px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     color: rgb(255, 255, 255);
 }
-
-
-
 
 .bloco_principal {
     background-color: aliceblue;
     display: flex;
+    flex-direction: row;
+    height: 500px;
+    width: 80%;
     align-items: center;
     margin-left: 10%;
     margin-right: 10%;
-    margin-top: 20px;
+    margin-top: 150px;
+    justify-content: space-around;
+    border-radius: 5%;
+    -webkit-box-shadow: 0 0 10px 0 rgb(163, 153, 122);
+    box-shadow: 0 0 10px 0 rgb(163, 153, 122);
 }
 
-.img-box-mulher-desenhando {
-    margin-top: 40px;
+.bloco1 {
+    display: flex;
+    height: 450px;
+    width: 600px;
+    flex-direction: column;
+
+}
+
+.bloco2 {
+    display: flex;
+    gap: 15%;
+    height: 450px;
+    width: 600px;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.img-box- {
+    margin-top: 30px;
+    width: 20px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
 }
 
 .bloco1 h1 {
-    font-size: 60px;
-    align-items: center;
-    justify-content: center;
-    margin-left: 10%;
+    color: #000000;
+    font-size: 40px;
+    margin-left: 5%;
+    width: 90%;
+    height: auto;
 }
 
 .bloco1 p {
     font-size: 30px;
-    width: 75%;
-    margin-left: 10%;
-    margin-top: 15px;
+    margin-left: 5%;
+    width: 90%;
+    height: 80%;
 }
 
 .btn1 {
-    background-color: #D4C7B4;
-    width: 500px;
-    height: 100px;
-    margin-left: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 80px;
+    margin-left: 10px;
+    background-color: #58906b;
+    font-size: 20px;
+    border-radius: 5%;
+    -webkit-box-shadow: 0 0 10px 0 rgb(92, 91, 87);
+    box-shadow: 0 0 10px 0 rgb(92, 91, 87);
+
 }
 
 .btn2 {
-    background-color: #D4C7B4;
-    width: 100%;
-    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 80px;
+    background-color: #58906b;
+    font-size: 20px;
+    border-radius: 5%;
+    -webkit-box-shadow: 0 0 10px 0 rgb(92, 91, 87);
+    box-shadow: 0 0 10px 0 rgb(92, 91, 87);
 }
 
-.btn-box .btn1 {
-    width: 100%;
-
+.btn-box {
+    align-items: center;
+    gap: 8%;
+    width: 800px;
+    height: 100px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
 }
-
-
 
 .topo_container {
     display: inline;
@@ -145,12 +173,12 @@ nav ul{
 }
 
 .topo_container h2 {
-    color: cadetblue;
+    color: rgb(57, 102, 59);
     font-size: 75px;
 }
 
 .topo_container p {
-    font-size: 30px;
+    font-size: 27px;
 }
 
 .box {
@@ -168,10 +196,13 @@ nav ul{
 }
 
 .container_1 {
+    background-color: #ffffff;
     width: 90%;
     height: 200%;
-    margin-left: 10%;
-
+    margin-left: 5%;
+    margin-top: 2%;
+     -webkit-box-shadow: 0 0 10px 0 rgb(163, 153, 122);
+    box-shadow: 0 0 10px 0 rgb(163, 153, 122);
 }
 
 .detail-box {
@@ -226,32 +257,33 @@ nav ul{
     background-color: #a45a6b;
 }
 
-
-.container-fundo{
+.container-fundo {
     display: flex;
     justify-content: center;
     margin-top: none;
     height: 100%;
     width: 100%;
 }
-.card-esquerda{
+
+.card-esquerda {
     font-size: 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items:center;
+    align-items: center;
     border-radius: 20px;
     margin-top: 150px;
     height: 300px;
     width: 400px;
     background-color: #a45a6b;
     color: #D4C7B4;
-   
+
 }
-.card-direita{
+
+.card-direita {
     font-size: 30px;
     display: flex;
-    justify-content: center;
+    justify-content:center;
     align-items:center;
     border-radius: 20px;
     margin-top: 150px;
@@ -259,14 +291,11 @@ nav ul{
     width: 400px;
     background-color: #D4C7B4;
     color: #195e30;
-    
 }
 
-.botao_quiz{
+.botao_quiz {}
 
-
-}
-.container_quiz{
+.container_quiz {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -277,34 +306,244 @@ nav ul{
     width: 60%;
 }
 
-.titulo_questionario{
+.titulo_questionario {
     font-size: 30px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     color: #195e30;
     margin-top: 15px;
     margin-bottom: 15px;
 }
-.pergunta{
+
+.pergunta {
     margin-top: 20px;
     margin-bottom: 25px;
     font-size: 20px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     color: #201b18;
 }
-.opcoes{
-    font-family:Georgia, 'Times New Roman', Times, serif;
+.topo_container p{
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.opcoes {
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 20px;
     border-radius: 20px;
-    border-style:ridge;
+    border-style: ridge;
     width: 200px;
     height: 40px;
     color: #201b18;
     background-color: #ffffff;
 }
-.botao_quiz{
+
+.botao_quiz {
     margin-top: 15px;
     border-radius: 20px;
     width: 200px;
     height: 40px;
     background-color: #ffffff;
+}
+
+.area_log {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 500px;
+}
+
+.box_login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 25px;
+    background-color: #e6e2dd;
+    height: 80%;
+    width: 60%;
+    border-radius: 20px;
+}
+
+.tex_login {
+    margin-top: 20px;
+    margin-bottom: 25px;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #201b18;
+}
+
+.inserir_dados {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    border-radius: 20px;
+    border-style: ridge;
+    width: 200px;
+    height: 40px;
+    color: #201b18;
+    background-color: #ffffff;
+}
+
+.botao_log {
+    background-color: #195e30;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #FFFFFF;
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+}
+.ver_resultado{
+    background-color: #195e30;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #FFFFFF;
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+}
+.card-direita-cadastro {
+    font-size: 30px;
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    align-items:center;
+    border-radius: 20px;
+    margin-top: 150px;
+    height: 500px;
+    width: 600px;
+    background-color: #D4C7B4;
+    color: #195e30;
+}
+.card-esquerda-cadastro {
+    font-size: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    margin-top: 150px;
+    height: 500px;
+    width: 600px;
+    background-color: #a45a6b;
+    color: #D4C7B4;
+
+}
+.inserir_dados_cadastro{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    border-radius: 20px;
+    border-style: ridge;
+    width: 200px;
+    height: 40px;
+    color: #201b18;
+    background-color: #ffffff;
+}
+.tex_login-cadastro{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #201b18;
+}
+.texto_esquerda-cadastro{
+    margin-left: 20px;
+
+}
+.botao_ir_para_cadastro{
+    background-color: #195e30;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #FFFFFF;
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+}
+.blog_area{
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+}
+.card_blog{
+    width: 300px;
+    height: 300px;
+    margin-top: 45px;
+    background-color: #fbfbfb;
+    padding: 25px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 1);
+}
+.cara_vendo_roupas{
+    width: 100%;
+    height: 100%;
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    background-color: #58906b;
+    width: 100%;
+    height: 100px;
+}
+.tex_footer{
+    font-size: medium;
+    color: white;
+    
+}
+.campoDash{
+   
+    height:100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+}
+.campo_dashboard1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 8%;
+    background-color: chartreuse;
+    width: 40%;
+    margin-bottom: 5%;
+   
+}
+.campo_dashboard2{
+    margin-top: 8%;
+    background-color: rgb(53, 15, 242);
+    width: 40%;
+    margin-bottom: 5%;
+    
+}
+.campo_dashboard3{
+    margin-top: 8%;
+    background-color: chartreuse;
+    width: 40%;
+    margin-bottom: 5%;
+   
+}
+.campo_dashboard4{
+    margin-top: 8%;
+    background-color: rgb(53, 15, 242);
+    width: 40%;
+    margin-bottom: 5%;
+    
+}
+.texto_dash{
+    display: flex;
+    justify-content: center;
+    margin-left: 10%;
+    margin-top: 10%;
+    color: rgb(0, 0, 0);
+    width: 80%;
+    height: 80%;
+}
+.linha{
+    background-color: #58906b;
+    width: 100%;
+    height: 5px;
 }

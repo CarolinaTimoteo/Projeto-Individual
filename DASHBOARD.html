@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/mini-logo-lilas.svg" type="image/gif" />
+    <link href="..//Projeto-Individual/css/nova_estilizacao.css" rel="stylesheet" />
+    <title>Re SIGNIFIC</title>
+</head>
+
+<body class="body">
+
+    <body class="sub_page">
+        <div class="hero_area">
+            <nav>
+                <img class="mini_logo_nav" src="..//Projeto-Individual/images/mini-logo-branco 12.svg">
+                <ul>
+                    <li>
+                        <a href="pag_inicial.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="">Sobre Re Signific</a>
+                    </li>
+                    <li>
+                        <a href="">Blog</a>
+                    </li>
+                    <li>
+                        <a href="blog.html">Quiz</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="texto_dash">
+            <p>Este é o relátório total de passoas que responderam o questionário, agora você pode ver o impacto de
+                estilo de consumo de cada um, incluindo você. O que será que podemos fazer para melhorar nosso
+                estilo?</p>
+        </div>
+        <div class="linha"></div>
+        <div class="campoDash">
+            <div class="campo_dashboard1">
+                <p>x pessoas já tinha ouvido falar sobre moda sustentável?</p>
+                <canvas id="myChart"></canvas>
+            </div>
+            <div class="campo_dashboard2">
+                <canvas id="myChart2"></canvas>
+            </div>
+            <div class="campo_dashboard3">
+                <canvas id="myChart3"></canvas>
+            </div>
+            <div class="campo_dashboard4">
+                <canvas id="myChart4"></canvas>
+            </div>
+        </div>
+
+    </body>
+
+    DASHBOARD
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    const aaa = document.getElementById('myChart2');
+    new Chart(aaa, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    const sss = document.getElementById('myChart3');
+    new Chart(sss, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    const ddd = document.getElementById('myChart4');
+    new Chart(ddd, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+
+</script>
