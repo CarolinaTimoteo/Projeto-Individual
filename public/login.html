@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <link rel="icon" href="..//public/assets/imgs/mini-logo-branco 12.svg" type="image" />
+  <title>Re SIGNIFIC</title>
+  <link rel="stylesheet" href="./css/nova_estilizacao.css" type="text/css" />
+  <script src="./js/sessao.js"></script>
+
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <nav>
+      <img class="mini_logo_nav" src="./assets/Group 12.png">
+      <ul>
+        <li>
+          <a href="pag_inicial.html">Home</a>
+        </li>
+        <li>
+          <a href="">Sobre Re Signific</a>
+        </li>
+        <li>
+          <a href="login.html">Login</a>
+        </li>
+        
+      </ul>
+    </nav>
+  </div>
+  <div class="container-fundo">
+    <div class="card-esquerda">
+      <a class="texto_quiz_esquerda">Entenda mais como seu estilo de consumo pode afetar o planeta.</a>
+      <button onclick="login()" class="botao_quiz">Login</button>
+      <button onclick="quiz()" class="botao_quiz">
+        <a href="cadastrohtml.html">Cadastre-se</a>
+      </button>
+      <div id="questionario"></div>
+    </div>
+    <div class="card-direita">
+      <a class="texto_quiz_direita">Cadastre-se para ter acesso as pesquisas quantitativas de estilo de consumo, onde
+        comparamos e vemos como as pessoas se comportam em relação ao consumo da moda.<br> Se já possui conta, faça o
+        login.
+      </a>
+    </div>
+  </div>
+  <div id="area_log" class="area_log" style="display: none;">
+    <div class="box_login">
+      <span class="tex_login">Insira seu email</span><br>
+      <input id="email_input" class="inserir_dados">
+      <br>
+      <span class="tex_login">Insira sua senha</span><br>
+      <input id="senha_input" class="inserir_dados" type="password" placeholder="******">
+      <br>
+      <button onclick="entrar()" class="botao_log">
+        Entar
+      </button>
+      <br>
+      <button onclick="botao_ir_para_cadastro()" class="botao_ir_para_cadastro" href="cadastrohtml.html">
+        <a href="cadastrohtml.html">Ainda não tenho cadastro</a></button>
+    </div>
+  </div>
+  <!-- <footer>
+      <div class="footer">
+        <div class="tex_footer">
+          <div>
+            <p>Carolina Timóteo Teixeira de Camargo</p>
+          </div>
+        </div>
+      </div>
+    </footer> -->
+
+</body>
+
+</html>
+
+<script>
+  function login() {
+    if (area_log.style.display == "none") {
+      area_log.style.display = "flex"
+
+    }
+  }
+  function entrar() {
+    // aguardar();
+
+    var emailVar = email_input.value;
+    var senhaVar = senha_input.value;
+
+    if (emailVar == "" || senhaVar == "") {
+      alert("Por favor, preencha os campos")
+      // cardErro.style.display = "block"
+      // mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+      // finalizarAguardar();
+      return false;
+    }
+    else {
+      // setInterval(sumirMensagem, 5000)
+
+      console.log("FORM LOGIN: ", emailVar);
+      console.log("FORM SENHA: ", senhaVar);
+
+      fetch("/usuarios/autenticar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          emailServer: emailVar,
+          senhaServer: senhaVar
+        })
+      }).then(function (resposta) {
+        // console.log("ESTOU NO THEN DO entrar()!")
+
+        if (resposta.ok) {
+          console.log(resposta);
+
+          resposta.json().then(json => {
+            console.log(json);
+            console.log(JSON.stringify(json));
+            sessionStorage.EMAIL_USUARIO = json[0].email;
+            sessionStorage.NOME_USUARIO = json[0].nome;
+            sessionStorage.ID_USUARIO = json[0].id;
+            // sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+
+            setTimeout(function () {
+              window.location = "DASHBOARD.HTML";
+            }, 1000); // apenas para exibir o loading
+
+          });
+
+        } else {
+          alert("Endereço não encontrado em nosso banco de dados, por favor realize seu cadastro para continuar")
+
+          console.log("Houve um erro ao tentar realizar o login!");
+
+          resposta.text().then(texto => {
+            console.error(texto);
+            // finalizarAguardar(texto);
+          });
+        }
+
+      }).catch(function (erro) {
+        console.log(erro);
+      })
+      if (sessionStorage.ID_USUARIO == null || sessionStorage.ID_USUARIO == undefined || sessionStorage.ID_USUARIO == "") {
+        alert("Para prosseguir para dashboard, por favor, realize seu cadastro")
+        return;
+      }
+    }
+    return false;
+  }
+
+  // function sumirMensagem() {
+  //     cardErro.style.display = "none"
+  // }
+</script>

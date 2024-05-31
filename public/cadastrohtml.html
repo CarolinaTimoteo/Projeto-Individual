@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <link rel="icon" href="assets/imgs/mini-logo-lilas.svg" type="image" />
+  <title>Re SIGNIFIC</title>
+  <link rel="stylesheet" href="./css/nova_estilizacao.css" type="text/css" />
+
+  <!-- <script src="scriptCadastro.js"></script> lik para o script separado-->
+
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <nav>
+      <img class="mini_logo_nav" rel="stylesheet" src="..//public/assets/imgs/mini-logo-branco 12.svg" type="text/css">
+      <ul>
+        <li>
+          <a href="pag_inicial.html">Home</a>
+        </li>
+        <li>
+          <a href="">Sobre Re Signific</a>
+        </li>
+        <li>
+          <a href="login.html">Login</a>
+        </li>
+        <li>
+          <a href="questionario.html" class="quiz_link">Quiz</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="container-fundo">
+    <div class="card-esquerda-cadastro">
+      <a class="texto_esquerda-cadastro">Cadastre-se para realizar seu teste e saber o quanto você contribui com o
+        planeta. É simples e prático.</a>
+
+      <div id="questionario"></div>
+    </div>
+    <div class="card-direita-cadastro">
+      <span class="tex_login-cadastro">Qual é o seu nome?</span>
+      <input id="nome_input" class="inserir_dados_cadastro">
+      <span class="tex_login-cadastro">Qual é o seu e-mail?</span>
+      <input id="email_input" class="inserir_dados_cadastro">
+      <!-- <span class="tex_login-cadastro">Repita seu e-mail</span>
+            <input id="repetir_email_input" class="inserir_dados_cadastro"> -->
+      <span class="tex_login-cadastro">Defina uma senha </span>
+      <input id="senha_input" class="inserir_dados_cadastro" type="password" placeholder="******">
+      <span class="tex_login-cadastro">Repita a senha </span>
+      <input id="confirmacao_senha_input" class="inserir_dados_cadastro" type="password" placeholder="******">
+      <button onclick="cadastrar()" class="botao_quiz">Fazer cadastro</button>
+      <div id="resposta_erro"></div>
+    </div>
+  </div>
+  <div>
+    <footer>
+      <div class="footer">
+        <div class="tex_footer">
+          <p>Carolina Timóteo Teixeira de Camargo</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>
+
+<script>
+  resposta_erro.innerHTML = ``
+  function cadastrar() {
+    // aguardar();
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nomeVar = nome_input.value;
+    var emailVar = email_input.value;
+    var senhaVar = senha_input.value;
+    var confirmacaoSenhaVar = confirmacao_senha_input.value;
+    // var empresaVar = listaEmpresas.value
+    if (
+      nomeVar == "" ||
+      emailVar == "" ||
+      senhaVar == "" ||
+      confirmacaoSenhaVar == ""
+      // empresaVar == ""
+    ) {
+      resposta_erro.innerHTML = `Preencha todos os campos para continuar`
+      //   cardErro.style.display = "block";
+      //   mensagem_erro.innerHTML =
+      //     "(Mensagem de erro para todos os campos em branco)";
+
+      //   finalizarAguardar();
+      return false;
+    }
+    else if (emailVar.indexOf("@") < 0) {
+      alert("e-mail inválido, o e-mail deve conter @")
+      return false;
+    }
+    else if (senhaVar.length > 8 || senhaVar.length < 6) {
+      alert("A senha precisa ter entre 6 e 8 caracteres")
+      return false;
+    }
+    // else {
+    //   setInterval(sumirMensagem, 5000);
+    // }
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: nomeVar,
+        emailServer: emailVar,
+        senhaServer: senhaVar,
+        // empresaServer: empresaVar
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          //   cardErro.style.display = "block";
+
+          //   mensagem_erro.innerHTML =
+          //     "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+          setTimeout(() => {
+            window.location = "blog.html";
+          }, "2000");
+
+          //   limparFormulario();
+          //   finalizarAguardar();
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        // finalizarAguardar();
+      });
+
+    return false;
+  }
+</script>

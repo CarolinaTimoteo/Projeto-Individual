@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/nova_estilizacao.css" type="text/css" />
+  <title>Document</title>
+</head>
+
+<body>
+
+  <body class="sub_page">
+    <div class="hero_area">
+      <nav>
+        <img class="mini_logo_nav" src="./assets/Group 12.png">
+        <ul>
+          <li>
+            <a href="pag_inicial.html">Home</a>
+          </li>
+          <li>
+            <a href="">Sobre Re Signific</a>
+          </li>
+          <li>
+            <a href="login.html">Login</a>
+          </li>
+          <li>
+            <a href="questionario.html">Quiz</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container">
+      <div class="container_quiz">
+        <a class="titulo_questionario">Questionário</a>
+        <span class="pergunta">Você já tinha ouvido falar sobre moda sustentável?</span>
+        <select id="sabia_sobre_moda_sustentavel" class="opcoes">
+          <option id="" placeholder="Selecione uma alterntiva"></option>
+          <option id="sim">Sim</option>
+          <option id="nao">Não</option>
+        </select>
+        <span class="pergunta">Você já tinha pensado sobre o destino final das roupas após o descarte delas?</span>
+        <select id="sobre_o_descarte" class="opcoes">
+          <option id="" placeholder="Selecione uma alterntiva"></option>
+          <option id="sim">Sim</option>
+          <option id="nao">Não</option>
+        </select>
+        <span class="pergunta">Você tem o costume de fazer o que quando não quer mais uma peça de roupa em bom
+          estado?</span>
+        <select id="sobre_peca_em_bom_estado" class="opcoes">7
+          <option id="" placeholder="Selecione uma alterntiva"></option>
+          <option id="doar">Doar</option>
+          <option id="lixo">Jogar no lixo</option>
+          <option id="vender">Vender</option>
+        </select>
+        <span class="pergunta">Você tem costume de comprar roupas de quanto em quanto tempo</span>
+        <select id="sobre_compra" class="opcoes">
+          <option id="" placeholder="Selecione uma alterntiva"></option>
+          <option id="1">1 vez no mes</option>
+          <option id="2">2 vezes no mes</option>
+          <option id="mais_vezes">Mais de 2 vezes no mês</option>
+          <option id="alg_vezes_ano">Algumas vezes no ano</option>
+        </select>
+        <br>
+        <br>
+        <button onclick="ver_resultado()" class="ver_resultado">Ver resultado</button>
+      </div>
+    </div>
+    </div>
+
+  </body>
+  <div>
+    <footer>
+      <div class="footer">
+        <div class="tex_footer">
+          <p>Carolina Timóteo Teixeira de Camargo</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>
+
+<script>
+  function ver_resultado() {
+
+    var resposta1 = sabia_sobre_moda_sustentavel.value
+    var resposta2 = sobre_o_descarte.value
+    var resposta3 = sobre_peca_em_bom_estado.value
+    var resposta4 = sobre_compra.value
+    var Id = sessionStorage.ID_USUARIO
+
+
+    fetch("/usuarios/quiz", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        resposta1Server: resposta1,
+        resposta2Server: resposta2,
+        resposta3Server: resposta3,
+        resposta4Server: resposta4,
+        IdServer: Id
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          cardErro.style.display = "block";
+
+          mensagem_erro.innerHTML =
+            "Quiz calculado com sucesso";
+
+          setTimeout(() => {
+            window.location = "DASHBOARD.html"; //coloquei a pag da dash
+          }, "2000");
+
+          limparFormulario();
+          // finalizarAguardar();
+        } else {
+          throw "Houve um erro ao tentar realizar o quiz!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        // finalizarAguardar();
+      });
+
+    return false;
+  }
+  fetch("/usuarios/autenticar", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      resposta1Server: resposta1,
+      resposta2Server: resposta2,
+      resposta3Server: resposta3,
+      resposta4Server: resposta4,
+      IdServer: Id
+    })
+  }).then(function (resposta) {
+    // console.log("ESTOU NO THEN DO entrar()!")
+  })
+</script>
