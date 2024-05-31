@@ -32,8 +32,13 @@ nav ul {
     position: relative;
     justify-content: space-evenly;
     gap: 80px;
+    list-style: none;
 }
 
+nav ul li{
+    text-decoration: none;
+    list-style: none;
+}
 .mini_logo_nav {
     width: 70px;
     height: 70px;
@@ -44,7 +49,9 @@ nav ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    list-style: none;
 }
 
 .nav-link2 {
@@ -53,6 +60,8 @@ nav ul {
     flex-direction: row;
     justify-content: space-between;
     color: rgb(255, 255, 255);
+    text-decoration: none;
+    list-style: none;
 }
 
 .nav-link3 {
@@ -61,6 +70,8 @@ nav ul {
     flex-direction: row;
     justify-content: space-between;
     color: rgb(255, 255, 255);
+    text-decoration: none;
+    list-style: none;
 }
 
 .nav-link3 {
@@ -69,6 +80,8 @@ nav ul {
     flex-direction: row;
     justify-content: space-between;
     color: rgb(255, 255, 255);
+    text-decoration: none;
+    list-style: none;
 }
 
 .bloco_principal {
@@ -546,4 +559,10 @@ nav ul {
     background-color: #58906b;
     width: 100%;
     height: 5px;
+}
+.linha2{
+    margin-top: 2%;
+    background-color: #c9aa72;
+    width: 100%;
+    height: 2px;
 }
