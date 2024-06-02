@@ -56,7 +56,6 @@
                     <canvas id="myChart"></canvas>
                 </div>
             </div>
-
             <div class="box_dahs">
                 <p>x pessoas já tinha ouvido falar sobre moda sustentável?</p>
                 <div class="campo_dashboard2">
@@ -70,7 +69,7 @@
                     <canvas id="myChart3"></canvas>
                 </div>
             </div>
-            
+
             <div class="box_dahs">
                 <p>x pessoas já tinha ouvido falar sobre moda sustentável?</p>
                 <div class="campo_dashboard4">
@@ -86,94 +85,101 @@
 
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    window.onload = obterDadosGrafico();
 
+    function obterDadosGrafico() {
+        fetch(`moda/obter-dados-quiz`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
 
+                    separarGraficos(resposta);
 
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
 
+    function separarGraficos(listaCompletaQuestoes) {
 
+        const listaQuestao1 = []
+        const listaQuestao2 = []
+        const listaQuestao3 = []
+        const listaQuestao4 = []
 
-
-
-
-
-
-    const ctx = document.getElementById('myChart');
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
+        for (let posicao = 0; posicao < listaCompletaQuestoes.length; posicao++) {
+            if (listaCompletaQuestoes[posicao].questao == "questao1") {
+                listaQuestao1.push(listaCompletaQuestoes[posicao])
+            }
+            else if (listaCompletaQuestoes[posicao].questao == "questao2") {
+                listaQuestao2.push(listaCompletaQuestoes[posicao])
+            }
+            else if (listaCompletaQuestoes[posicao].questao == "questao3") {
+                listaQuestao3.push(listaCompletaQuestoes[posicao])
+            }
+            else if (listaCompletaQuestoes[posicao].questao == "questao4") {
+                listaQuestao4.push(listaCompletaQuestoes[posicao])
             }
         }
-    });
+        plotarGrafico(listaQuestao1, "myChart")
+        plotarGrafico(listaQuestao2, "myChart2")
+        plotarGrafico(listaQuestao3, "myChart3")
+        plotarGrafico(listaQuestao4, "myChart4")
+    }
 
-    const aaa = document.getElementById('myChart2');
-    new Chart(aaa, {
-        type: 'bar',
-        data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-    const sss = document.getElementById('myChart3');
-    new Chart(sss, {
-        type: 'bar',
-        data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-    const ddd = document.getElementById('myChart4');
-    new Chart(ddd, {
-        type: 'bar',
-        data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
+    function plotarGrafico(listaQuestoes, idGrafico) {
+        const colunas = []
+        const valores = []
 
+        for (let posicao = 0; posicao < listaQuestoes.length; posicao++) {
+            colunas.push(listaQuestoes[posicao].resposta_valor)
+            valores.push(listaQuestoes[posicao].qnt)
+        }
 
+        const porcentagens = transformarValoresEmPorcentagens(valores)
+
+        const ctx = document.getElementById(idGrafico);
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: colunas,
+                datasets: [{
+                    label: 'Quantidade de respostas',
+                    data: porcentagens,
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                
+            }
+        });
+    }
+
+    function transformarValoresEmPorcentagens(valores) {
+
+        // [1,7]
+        var somaResultado = 0
+        for (let posicao = 0; posicao < valores.length; posicao++) {
+            somaResultado += valores[posicao]
+        }
+
+        let listaPorcentagens = []
+        for (let posicao = 0; posicao < valores.length; posicao++) {
+            listaPorcentagens.push(100 * valores[posicao] / somaResultado)
+        }
+
+        return listaPorcentagens
+    }
 </script>
