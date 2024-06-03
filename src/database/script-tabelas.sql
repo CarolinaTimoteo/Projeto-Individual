@@ -1,14 +1,6 @@
--- Arquivo de apoio, caso você queira criar tabelas como as aqui criadas para a API funcionar.
--- Você precisa executar os comandos no banco de dados para criar as tabelas,
--- ter este arquivo aqui não significa que a tabela em seu BD estará como abaixo!
+CREATE DATABASE resignific;
 
-/*
-comandos para mysql server
-*/
-
-CREATE DATABASE aquatech;
-
-USE aquatech;
+USE resignific;
 
 CREATE TABLE usuario (
 	id INT PRIMARY KEY AUTO_INCREMENT,
@@ -17,32 +9,50 @@ CREATE TABLE usuario (
 	senha VARCHAR(50)
 );
 
-CREATE TABLE aviso (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
+CREATE TABLE quiz(
+idResposta int primary key auto_increment,
+FkUsuario int,
+foreign key (FkUsuario) references usuario (id),
+resposta1 char(3), constraint chkTexto check ( resposta1 in ('sim', 'não')),
+resposta2 char (3) constraint check (resposta2 in ('Sim', 'Não')),
+resposta3 varchar(30) constraint check (resposta3 in ('Doar', 'Jogar no lixo', 'Vender')),
+resposta4 varchar (45)
 );
 
-create table aquario (
-/* em nossa regra de negócio, um aquario tem apenas um sensor */
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	descricao VARCHAR(300)
-);
+insert into usuario values
+(default, 'Carolina', 'carol@gmail.com', '123456');
 
-/* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
+insert into quiz values
+(default, 1, 'Não', 'Não', 'Doar', '1 vez no mes');
 
-create table medida (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	dht11_umidade DECIMAL,
-	dht11_temperatura DECIMAL,
-	luminosidade DECIMAL,
-	lm35_temperatura DECIMAL,
-	chave TINYINT,
-	momento DATETIME,
-	fk_aquario INT,
-	FOREIGN KEY (fk_aquario) REFERENCES aquario(id)
-);
+WITH CTE_resposta1 AS (
+    SELECT 'questao1' AS questao, resposta1 AS resposta_valor, COUNT(*) AS qnt
+    FROM quiz
+    GROUP BY resposta1
+),
+CTE_resposta2 AS (
+    SELECT 'questao2' AS questao, resposta2 AS resposta_valor, COUNT(*) AS qnt
+    FROM quiz
+    GROUP BY resposta2
+),
+CTE_resposta3 AS (
+    SELECT 'questao3' AS questao, resposta3 AS resposta_valor, COUNT(*) AS qnt
+    FROM quiz
+    GROUP BY resposta3
+),
+CTE_resposta4 AS (
+    SELECT 'questao4' AS questao, resposta4 AS resposta_valor, COUNT(*) AS qnt
+    FROM quiz
+    GROUP BY resposta4
+)
+SELECT * FROM CTE_resposta1
+UNION ALL
+SELECT * FROM CTE_resposta2
+UNION ALL
+SELECT * FROM CTE_resposta3
+UNION ALL
+SELECT * FROM CTE_resposta4;
 
-insert into aquario (descricao) values ('Aquário de Estrela-do-mar');
+select * from usuario;
+
+select * from quiz;
