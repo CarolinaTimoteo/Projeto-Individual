@@ -1,9 +1,11 @@
 .body {
     background-color: #f4f1ed;
 }
-html{
+
+html {
     scroll-behavior: smooth;
 }
+
 nav {
     top: 0%;
     width: 100%;
@@ -12,7 +14,6 @@ nav {
     font-size: 18px;
     color: black;
     display: flex;
-    /* justify-content: center; */
     gap: 25%;
     align-items: center;
     position: fixed;
@@ -35,7 +36,6 @@ nav ul {
     gap: 80px;
     list-style: none;
     text-decoration: none;
-
 }
 
 nav a {
@@ -114,7 +114,6 @@ nav ul li {
     height: 450px;
     width: 600px;
     flex-direction: column;
-
 }
 
 .bloco2 {
@@ -124,7 +123,6 @@ nav ul li {
     width: 600px;
     flex-direction: row;
     justify-content: space-around;
-
 }
 
 .img-box- {
@@ -152,13 +150,13 @@ nav ul li {
 
 .btn1 a {
     text-decoration: none;
-    color: #e6e2dd;
+    color: #ffffff;
 }
 
 .btn2 a {
     margin-left: 4%;
     text-decoration: none;
-    color: #e6e2dd;
+    color: #ffffff;
 }
 
 .btn2 {
@@ -174,6 +172,7 @@ nav ul li {
     box-shadow: 0 0 10px 0 rgb(92, 91, 87);
 }
 
+
 .btn-box {
     align-items: center;
     gap: 8%;
@@ -183,17 +182,16 @@ nav ul li {
     display: flex;
     flex-direction: row;
 }
-.sobre_resignific{
+
+.sobre_resignific {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around
-
 }
-
 
 .sobre_resignific p {
     font-size: 27px;
-} 
+}
 
 .box {
     display: flex;
@@ -290,8 +288,7 @@ nav ul li {
     height: 300px;
     width: 400px;
     background-color: #a45a6b;
-    color: #D4C7B4;
-
+    color: #ffffff;
 }
 
 .card-direita {
@@ -307,15 +304,16 @@ nav ul li {
     color: #000000;
 }
 
-.botao_quiz a{
+.botao_quiz a {
     margin-left: 4%;
-text-decoration: none;
-color: #020202;
+    text-decoration: none;
+    color: #ffffff;
 }
+
 .botao_log a {
     margin-left: 4%;
-text-decoration: none;
-color: #e6e2dd;
+    text-decoration: none;
+    color: #e6e2dd;
 }
 
 .container_quiz {
@@ -362,11 +360,13 @@ color: #e6e2dd;
 }
 
 .botao_quiz {
+    color: #FFFFFF;
     margin-top: 15px;
     border-radius: 20px;
     width: 200px;
     height: 40px;
-    background-color: #ffffff;
+    background-color: #58906b;
+    border-color: none;
 }
 
 .area_log {
@@ -379,7 +379,6 @@ color: #e6e2dd;
 
 .box_login {
     display: flex;
-    
     align-items: center;
     flex-direction: column;
     margin-top: 25px;
@@ -387,7 +386,6 @@ color: #e6e2dd;
     height: 80%;
     width: 50%;
     border-radius: 20px;
-    
 }
 
 .tex_login {
@@ -410,7 +408,7 @@ color: #e6e2dd;
 }
 
 .botao_log {
-    background-color: #195e30;
+    background-color: #58906b;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #FFFFFF;
     width: 200px;
@@ -440,10 +438,12 @@ color: #e6e2dd;
     background-color: #D4C7B4;
     color: #195e30;
 }
-a.texto_quiz_direita{
+
+a.texto_quiz_direita {
     margin-left: 4%;
 }
-a.texto_quiz_esquerda{
+
+a.texto_quiz_esquerda {
     margin-left: 4%;
 }
 
@@ -458,7 +458,7 @@ a.texto_quiz_esquerda{
     height: 500px;
     width: 600px;
     background-color: #a45a6b;
-    color: #D4C7B4;
+    color: #ffffff;
 
 }
 
@@ -487,19 +487,18 @@ a.texto_quiz_esquerda{
 }
 
 .botao_ir_para_cadastro {
-    background-color: #195e30;
+    background-color: #58906b;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #FFFFFF;
     width: 200px;
     height: 40px;
     border-radius: 20px;
-
 }
 
 .botao_ir_para_cadastro a {
     margin-left: 4%;
     text-decoration: none;
-    color: #e6e2dd;
+    color: #ffffff;
 }
 
 .blog_area {
@@ -542,53 +541,15 @@ a.texto_quiz_esquerda{
     justify-content: end;
     font-size: medium;
     color: white;
-
 }
 
 .campoDash {
-
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
-
-}
-
-.campo_dashboard1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 8%;
-    background-color: chartreuse;
-    /* width: 40%;
-    margin-bottom: 5%; */
-
-}
-
-.campo_dashboard2 {
-    margin-top: 8%;
-    background-color: rgb(53, 15, 242);
-    /* width: 40%;
-    margin-bottom: 5%; */
-
-}
-
-.campo_dashboard3 {
-    margin-top: 8%;
-    background-color: chartreuse;
-    /* width: 40%;
-    margin-bottom: 5%; */
-
-}
-
-.campo_dashboard4 {
-    margin-top: 8%;
-    background-color: rgb(53, 15, 242);
-    /* width: 40%;
-    margin-bottom: 5%; */
-
 }
 
 .texto_dash {
@@ -599,7 +560,7 @@ a.texto_quiz_esquerda{
     color: rgb(0, 0, 0);
     width: 80%;
     height: 80%;
-    font-family:Verdana;
+    font-family: Verdana;
 }
 
 .linha {
@@ -614,29 +575,36 @@ a.texto_quiz_esquerda{
     width: 100%;
     height: 2px;
 }
-.botao_questionario{
+
+.botao_questionario {
     margin-top: 1%;
     background-color: #58906b;
     height: 60px;
     width: 200px;
     border: none;
     border-radius: 20px;
-    font-family:Verdana;
+    font-family: Verdana;
     font-size: 15px;
+    justify-content: space-between;
+    gap: 15%;
 }
-.botao_questionario a{
+
+.botao_questionario a {
     text-decoration: none;
-    color:#ffffff;
+    color: #ffffff;
 }
-.campo_botao_dash{
+
+.campo_botao_dash {
     display: flex;
     justify-content: center;
+    justify-content: space-evenly;
 }
-.quiz_link{
+
+.quiz_link {
     display: none;
 }
-.bloco_intro_dashboard{
-    
+
+.bloco_intro_dashboard {
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: aliceblue;
     width: 90%;
@@ -645,24 +613,27 @@ a.texto_quiz_esquerda{
     -webkit-box-shadow: 0 0 10px 0 rgb(163, 153, 122);
     box-shadow: 0 0 10px 0 rgb(163, 153, 122);
 }
-.bloco_intro_dashboard h3{
+
+.bloco_intro_dashboard h3 {
     font-size: 25px;
     margin-left: 5%;
 }
-.bloco_intro_dashboard p{
+
+.bloco_intro_dashboard p {
     font-size: 20px;
     margin-left: 5%;
 }
 
-.bloco_dashboard{
+.bloco_dashboard {
     display: flex;
     justify-content: center;
     margin-top: 9%;
     width: 100%;
     height: 100%;
-   
+
 }
-.box_dahs{
+
+.box_dahs {
     gap: 2%;
     width: 500px;
     height: 300px;
@@ -670,6 +641,8 @@ a.texto_quiz_esquerda{
     background-color: rgb(255, 255, 255);
     padding: 25px;
     border-radius: 5px;
-    /* -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 1); */
+}
+
+ul.menu a {
+    cursor: pointer
 }

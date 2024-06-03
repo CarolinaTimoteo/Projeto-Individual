@@ -4,7 +4,7 @@ function validarSessao() {
     var b_usuario = document.getElementById("b_usuario");
 
     if (usuarioLogado == true) {
-        b_usuario.innerHTML = nome;
+        b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     } else {
         window.location = "../login.html";
     }
@@ -23,10 +23,19 @@ function validaUsuarioLogado() {
 
 function exibirMenu() {
     var usuarioLogado = validaUsuarioLogado()
-    if (usuarioLogado == false) {
-       let link_dash = document.getElementById("link_dashboard")
-       link_dash.style.display = "none"
+    if (usuarioLogado == true) {
+        let link_login = document.getElementById("link_login")
+        link_login.style.display = "none"
+
     }
+    else {
+        let link_dash = document.getElementById("link_dashboard")
+        link_dash.style.display = "none"
+
+        let link_sair = document.getElementById("link_sair")
+        link_sair.style.display = "none"
+    }
+
 
 }
 
