@@ -75,6 +75,7 @@ function quiz(req, res) {
     var Id = req.body.IdServer;
 
 
+
     if (resposta1 == undefined) {
         res.status(400).send("Sua resposta está undefined!");
     } else if (resposta2 == undefined) {
@@ -103,8 +104,34 @@ function quiz(req, res) {
 
 }
 
+function capturarQTD(req, res) {
+    var usuarioId = req.query.Id
+
+    if (usuarioId == undefined) {
+        res.status(400).send("Seu id está undefined!");
+    } else {
+
+        usuarioModel.capturarQTD(usuarioId)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar pegar a quantidade de respostas! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 module.exports = {
     autenticar,
     cadastrar,
-    quiz
+    quiz,
+    capturarQTD
 }

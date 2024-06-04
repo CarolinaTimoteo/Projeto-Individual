@@ -11,7 +11,7 @@
     <title>Re SIGNIFIC</title>
 </head>
 
-<body class="body" onload="obterDadosGrafico(); validarSessao(); exibirMenu()">
+<body class="body" onload="obterDadosGrafico(); validarSessao(); exibirMenu(); capturarQTD()">
 
     <body class="sub_page">
         <div class="hero_area">
@@ -86,6 +86,13 @@
                     <canvas id="myChart4"></canvas>
                 </div>
             </div>
+
+            <div class="box_dahs">
+                <p>Quantas vezes você resposdeu o questionário</p>
+                <div class="campo_dashboard4">
+                    <canvas id="grafico_historico"></canvas>
+                </div>
+            </div>
         </div>
 
     </body>
@@ -141,6 +148,7 @@
         plotarGrafico(listaQuestao2, "myChart2")
         plotarGrafico(listaQuestao3, "myChart3")
         plotarGrafico(listaQuestao4, "myChart4")
+
     }
     //recebe o listaQuestoes e idGrafico e faz com que apenas uma função seja necessária para realizar todos os gráficos
     function plotarGrafico(listaQuestoes, idGrafico) {
@@ -177,6 +185,75 @@
             }
         });
     }
+
+    const qtd_vezes_questionario_respondido = document.getElementById("grafico_historico");
+
+const grafico_historico = new Chart(qtd_vezes_questionario_respondido, {
+    type: 'bar',
+    data: {
+        labels: [], // Inicia com labels vazios
+        datasets: [{
+            label: 'Quantidade de Vezes Respondidas',
+            data: [], // Inicia com dados vazios
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+function capturarQTD() {
+    fetch(`/usuarios/capturarQTD?Id=${sessionStorage.getItem('ID_USUARIO')}`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(function (resposta) {
+        if (resposta.ok) {
+            return resposta.json();
+        } else {
+            throw new Error("Erro na resposta do servidor");
+        }
+    })
+    .then(function (data) {
+        console.log("todas as quantidades:", data);
+
+        // Verifique se os dados estão no formato esperado
+        if (!Array.isArray(data) || data.length === 0) {
+            throw new Error("Dados inválidos recebidos do servidor");
+        }
+
+        // Extraia os dados do JSON
+        const qtd_vezes_respondidas = data.map(item => item.vezes_respondido);
+        const nomeUsuario = data.map(item => item.nome_usuario);
+
+        console.log("Nomes dos usuários:", nomeUsuario);
+        console.log("Quantidades de vezes respondidas:", qtd_vezes_respondidas);
+
+        // Atualize os dados do gráfico
+        grafico_historico.data.labels = nomeUsuario;
+        grafico_historico.data.datasets[0].data = qtd_vezes_respondidas;
+
+        // Adicione um log antes de chamar update()
+        console.log("Atualizando gráfico com novos dados...");
+        grafico_historico.update();
+    })
+    .catch(function (erro) {
+        alert("Houve um erro na comunicação com nossos servidores, tente novamente por favor.");
+        console.log(erro);
+    });
+}
+
+capturarQTD();
+
+    
+
 
     function transformarValoresEmPorcentagens(valores) {
 

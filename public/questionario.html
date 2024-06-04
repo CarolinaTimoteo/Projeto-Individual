@@ -60,8 +60,8 @@
         <span class="pergunta">Você tem costume de comprar roupas de quanto em quanto tempo?</span>
         <select id="sobre_compra" class="opcoes">
           <option id="" placeholder="Selecione uma alterntiva"></option>
-          <option id="1">1 vez no mes</option>
-          <option id="2">2 vezes no mes</option>
+          <option id="1">1 vez no mês</option>
+          <option id="2">2 vezes no mês</option>
           <option id="mais_vezes">Mais de 2 vezes no mês</option>
           <option id="alg_vezes_ano">Algumas vezes no ano</option>
         </select>
@@ -102,7 +102,7 @@
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-
+        //obtem dados das variaveis e passa para o formato json
         resposta1Server: resposta1,
         resposta2Server: resposta2,
         resposta3Server: resposta3,
@@ -117,7 +117,7 @@
 
         alert("Quiz realizado com sucesso");
         window.location = "dashboard.html";
-        
+
       } else {
         alert("Houve um erro ao tentar realizar o quiz!");
         throw "Houve um erro ao tentar realizar o quiz!";

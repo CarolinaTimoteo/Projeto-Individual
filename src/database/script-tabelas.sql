@@ -1,6 +1,7 @@
 CREATE DATABASE resignific;
 
 USE resignific;
+drop database resignific;
 
 CREATE TABLE usuario (
 	id INT PRIMARY KEY AUTO_INCREMENT,
@@ -8,6 +9,8 @@ CREATE TABLE usuario (
 	email VARCHAR(50),
 	senha VARCHAR(50)
 );
+alter table usuario modify email varchar (200);
+alter table usuario modify senha varchar (8);
 
 CREATE TABLE quiz(
 idResposta int primary key auto_increment,
@@ -18,6 +21,22 @@ resposta2 char (3) constraint check (resposta2 in ('Sim', 'Não')),
 resposta3 varchar(30) constraint check (resposta3 in ('Doar', 'Jogar no lixo', 'Vender')),
 resposta4 varchar (45)
 );
+
+create table historico(
+id_histórico int auto_increment,
+fk_usuario int,
+fk_quiz int,
+data_quiz DATETIME,
+primary key (id_histórico, fk_usuario, fk_quiz),
+constraint fkHistoricoUsuario foreign key (fk_usuario) references usuario(id),
+constraint fkHistoricoQuiz foreign key (fk_quiz) references quiz(idResposta));
+
+insert into historico value
+(default, 1, 1, now());
+
+
+
+
 
 insert into usuario values
 (default, 'Carolina', 'carol@gmail.com', '123456');
@@ -56,3 +75,27 @@ SELECT * FROM CTE_resposta4;
 select * from usuario;
 
 select * from quiz;
+
+
+SELECT 
+    usuario.nome,
+    COUNT(quiz.idResposta) AS vezes_respondido
+FROM 
+    usuario
+LEFT JOIN 
+    quiz ON usuario.id = quiz.FkUsuario
+GROUP BY 
+    usuario.id, usuario.nome;
+
+
+    SELECT 
+            usuario.nome AS nome_usuario,
+            COUNT(quiz.idResposta) AS vezes_respondido
+        FROM 
+            usuario
+        LEFT JOIN 
+            quiz ON usuario.id = quiz.FkUsuario
+        WHERE
+            usuario.id = 1
+        GROUP BY 
+            usuario.id, usuario.nome;

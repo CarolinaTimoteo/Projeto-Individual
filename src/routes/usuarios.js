@@ -16,4 +16,8 @@ router.post("/quiz", function (req, res) {
     usuarioController.quiz(req, res);
 });
 
+router.get("/capturarQTD", function (req, res) {
+    usuarioController.capturarQTD(req, res);
+});
+
 module.exports = router;
