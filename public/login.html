@@ -57,10 +57,11 @@
       <input id="senha_input" class="inserir_dados" type="password" placeholder="******">
       <br>
       <button onclick="entrar()" class="botao_log">
-        Entar
+        Entrar
       </button>
       <br>
-      <button onclick=" window.location = '../cadastro.html';"  class="botao_ir_para_cadastro" href="cadastro.html">Ainda não tenho cadastro</button>
+      <button onclick=" window.location = '../cadastro.html';" class="botao_ir_para_cadastro" href="cadastro.html">Ainda
+        não tenho cadastro</button>
     </div>
   </div>
 </body>
@@ -91,6 +92,7 @@
       console.log("FORM LOGIN: ", emailVar);
       console.log("FORM SENHA: ", senhaVar);
 
+      //post envia informação para usuario/autenticar em formato json
       fetch("/usuarios/autenticar", {
         method: "POST",
         headers: {
@@ -105,6 +107,7 @@
         if (resposta.ok) {
           console.log(resposta);
 
+          //Grava os dados no sessionStorage
           resposta.json().then(json => {
             console.log(json);
             console.log(JSON.stringify(json));
@@ -126,12 +129,13 @@
 
           });
         }
-      
+
       })
-      .catch(function (erro) {
-        alert("Houve um erro na comunição com nossos servidores, tente novmente por favor.")
-        console.log(erro);
-      })
+      //Aciona quando existe um erro de comunicação com o servidor
+        .catch(function (erro) {
+          alert("Houve um erro na comunição com nossos servidores, tente novmente por favor.")
+          console.log(erro);
+        })
       if (sessionStorage.ID_USUARIO == null || sessionStorage.ID_USUARIO == undefined || sessionStorage.ID_USUARIO == "") {
         return;
       }

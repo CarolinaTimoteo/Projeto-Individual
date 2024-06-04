@@ -10,7 +10,7 @@ function autenticar(req, res) {
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está indefinida!");
     } else {
-
+        //Envia o e-mail e a senha e valida se tem ou não este e-mail e senha no banco de dados
         usuarioModel.autenticar(email, senha)
             .then(
                 function (resultadoAutenticar) {
@@ -19,7 +19,7 @@ function autenticar(req, res) {
 
                     if (resultadoAutenticar.length == 1) {
                         console.log(resultadoAutenticar);
-                            res.status(200).json(resultadoAutenticar);
+                        res.status(200).json(resultadoAutenticar);
                     } else if (resultadoAutenticar.length == 0) {
                         res.status(403).send("Email e/ou senha inválido(s)");
                     } else {
@@ -87,7 +87,7 @@ function quiz(req, res) {
         res.status(400).send("Sua resposta está indefinida!");
     } else {
 
-        usuarioModel.quiz(resposta1, resposta2, resposta3, resposta4, Id )
+        usuarioModel.quiz(resposta1, resposta2, resposta3, resposta4, Id)
             .then(
                 function () {
                     res.status(200).json();

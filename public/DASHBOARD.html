@@ -42,7 +42,7 @@
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
 
                 <p>Este é o relatório total de pessoas que responderam o questionário, agora você pode ver o impacto do
-                    estilo de consumo de cada um, incluindo você! Se ainda não respondeu o questionário, responda agora
+                    estilo de consumo de cada um, incluindo você! Se ainda não respondeu ao questionário, responda agora
                     mesmo clicando no botão abaixo. <br>
                     O que será que podemos fazer para melhorar nosso
                     estilo?</p>
@@ -52,7 +52,8 @@
 
 
         <div class="campo_botao_dash">
-            <button onclick="window.location = '../questionario.html';"  class="botao_questionario">Realizar questionário</button>
+            <button onclick="window.location = '../questionario.html';" class="botao_questionario">Realizar
+                questionário</button>
         </div>
         <div class="campoDash">
             <div class="box_dahs">
@@ -63,14 +64,16 @@
                 </div>
             </div>
             <div class="box_dahs">
-                <p>Respostas sobre a pergunta: já tinha pensado sobre o destino final das roupas após o descarte delas?</p>
+                <p>Respostas sobre a pergunta: já tinha pensado sobre o destino final das roupas após o descarte delas?
+                </p>
                 <div class="campo_dashboard2">
                     <canvas id="myChart2"></canvas>
                 </div>
             </div>
 
             <div class="box_dahs">
-                <p>Respostas sobre a pergunta: tem o costume de fazer o que quando não quer mais uma peça de roupa em bom
+                <p>Respostas sobre a pergunta: tem o costume de fazer o que quando não quer mais uma peça de roupa em
+                    bom
                     estado?</p>
                 <div class="campo_dashboard3">
                     <canvas id="myChart3"></canvas>
@@ -100,7 +103,7 @@
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
                     resposta.reverse();
 
-                    separarGraficos(resposta);
+                    separarGraficos(resposta);//envia alista completa de questoes
 
                 });
             } else {
@@ -133,12 +136,13 @@
                 listaQuestao4.push(listaCompletaQuestoes[posicao])
             }
         }
+
         plotarGrafico(listaQuestao1, "myChart")
         plotarGrafico(listaQuestao2, "myChart2")
         plotarGrafico(listaQuestao3, "myChart3")
         plotarGrafico(listaQuestao4, "myChart4")
     }
-
+    //recebe o listaQuestoes e idGrafico e faz com que apenas uma função seja necessária para realizar todos os gráficos
     function plotarGrafico(listaQuestoes, idGrafico) {
         const colunas = []
         const valores = []
@@ -177,11 +181,13 @@
     function transformarValoresEmPorcentagens(valores) {
 
         var somaResultado = 0
+        //descobrir a soma total da lista
         for (let posicao = 0; posicao < valores.length; posicao++) {
             somaResultado += valores[posicao]
         }
 
         let listaPorcentagens = []
+        //cada item da lista * 100 / somaResultado
         for (let posicao = 0; posicao < valores.length; posicao++) {
             listaPorcentagens.push(100 * valores[posicao] / somaResultado)
         }
